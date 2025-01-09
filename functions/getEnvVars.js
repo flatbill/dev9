@@ -1,10 +1,12 @@
 exports.handler = async (event) => {
-  // const whichDba = process.env.API_KEY
-  const whichDb = process.env.whichDb
-  console.log('reached line 4 of getEnvVars.js lambda')
+  // let whichDba = process.env.API_KEY
+  let whichDb = process.env.whichDb
+  console.log('4 process.env.whichDb:')
+  console.log(whichDb)
+  console.log('reached line 6 of getEnvVars.js lambda')
   const response = {
       statusCode: 200,
-      body: JSON.stringify('Hello from Lambda!'),
+      body: JSON.stringify('7 Hello from Lambda!'),
   };
   return response;
 };
