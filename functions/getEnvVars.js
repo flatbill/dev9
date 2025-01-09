@@ -1,11 +1,11 @@
-import { createClient } from "@libsql/client"
+// import { createClient } from "@libsql/client"
 // let tursoUrl = process.env.tursoDbUrl
 // let tursoAuthToken = process.env.tursoAuthToken
 // let tursoClient = createClient()
-this.turso = createClient({
-  url: process.env.tursoDbUrl,
-  authToken: process.env.tursoAuthToken
-})
+// this.turso = createClient({
+//   url: process.env.tursoDbUrl,
+//   authToken: process.env.tursoAuthToken
+// })
 
 exports.handler = async (event) => {
   // let whichDba = process.env.API_KEY
@@ -17,9 +17,10 @@ exports.handler = async (event) => {
   console.log('mossy:')
   console.log(mossy)
   console.log('reached line 6 of getEnvVars.js lambda')
-  const response = {
+  let response = {
       statusCode: 200,
-      body: JSON.stringify('7 Hello from Lambda!'),
-  };
-  return response;
+      body: JSON.stringify(whichDb)
+  }
+  console.log('24 end of getEnvVars.js')
+  return response
 };
