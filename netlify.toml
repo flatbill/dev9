@@ -1,0 +1,5 @@
+  [functions]
+   directory = "functions"
+   external_node_modules = [   "@netlify/core"]
+
+   
