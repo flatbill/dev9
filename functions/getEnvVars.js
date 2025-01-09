@@ -3,6 +3,10 @@ exports.handler = async (event) => {
   let whichDb = process.env.whichDb
   console.log('4 process.env.whichDb:')
   console.log(whichDb)
+  let mossy = process.env.MOSS_MASTER
+
+  console.log('mossy:')
+  console.log(mossy)
   console.log('reached line 6 of getEnvVars.js lambda')
   const response = {
       statusCode: 200,
