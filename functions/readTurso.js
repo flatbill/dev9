@@ -1,5 +1,5 @@
 
-// import { createClient } from "@libsql/client"
+import { createClient } from "@libsql/client"
 // const supaUrl = process.env.supaUrl
 // const supaAnonKey = process.env.supaAnonKey
 // const supabaseClient = createClient(supaUrl,supaAnonKey)
