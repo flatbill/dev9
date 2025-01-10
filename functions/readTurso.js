@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
     body:  JSON.stringify('ratsyMatsy')
   }
   console.log('22 readTurso.js   myresponse.body:')
-  console.log(myresponse.body)
+  console.log(myResponse.body)
   console.log('we reached the end of readTurso.js. ready to return.')
   return myResponse   
 } // end export.handler 
