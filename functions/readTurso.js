@@ -1,5 +1,5 @@
 
-import { createClient } from "@libsql/client"
+// import { createClient } from "@libsql/client"
 
 // import { createClient } from '@supabase/supabase-js' 
 // const supaUrl = process.env.supaUrl
@@ -9,10 +9,10 @@ import { createClient } from "@libsql/client"
 
 exports.handler = async (event, context) => {
   console.log('15 running Netlify lambda function: readTurso')
-  let turso = createClient({
-    url: process.env.TURSO_DATABASE_URL,
-    authToken: process.env.TURSO_AUTH_TOKEN
-  })
+  // let turso = createClient({
+  //   url: process.env.TURSO_DATABASE_URL,
+  //   authToken: process.env.TURSO_AUTH_TOKEN
+  // })
   
   let qsParms = event.queryStringParameters
   let myResponse = {
