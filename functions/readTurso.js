@@ -1,5 +1,7 @@
 
-import { createClient } from "@libsql\client"
+import { createClient } from "@libsql/client"
+// import { createClient } from '@supabase/supabase-js' 
+
 // import { createClient } from "@libsql/client"
 
 // const supaUrl = process.env.supaUrl
