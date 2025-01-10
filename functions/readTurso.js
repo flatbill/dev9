@@ -1,5 +1,5 @@
 
-import { createClient } from "@libsql/client"
+// import { createClient } from "@libsql/client"
 // import { createClient } from '@supabase/supabase-js' 
 
 // import { createClient } from "@libsql/client"
@@ -8,10 +8,10 @@ import { createClient } from "@libsql/client"
 // const supaAnonKey = process.env.supaAnonKey
 // const supabaseClient = createClient(supaUrl,supaAnonKey)
 //  
-let turso = createClient({
-  url: process.env.TURSO_DATABASE_URL,
-  authToken: process.env.TURSO_AUTH_TOKEN
-})
+// let turso = createClient({
+//   url: process.env.TURSO_DATABASE_URL,
+//   authToken: process.env.TURSO_AUTH_TOKEN
+// })
 
 
 exports.handler = async (event, context) => {
