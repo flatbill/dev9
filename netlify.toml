@@ -1,5 +1,5 @@
   [functions]
    directory = "functions"
-   external_node_modules = [   "@netlify/coreyyyy","@libsql/clientyyyyyy"]
+   external_node_modules = [   "@netlify/coreyyyy","@libsql/client"]
 
    
