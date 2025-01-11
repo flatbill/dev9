@@ -1,4 +1,10 @@
-  [functions]
-   directory = "functions"
- [functions.readUsers2]
-   external_node_modules = ["@supabase/supabase-js"]
+ [build]
+    functions = "functions"
+
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+      Access-Control-Allow-Origin = "*"
+
+   
