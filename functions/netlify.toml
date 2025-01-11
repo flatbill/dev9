@@ -1,8 +1,0 @@
-  [functions]
-    node_bundler = "esbuild"
-    directory = "functions"
- [functions.readTurso]
-   external_node_modules = ["@libsql/client"]
-[functions.readSupabase]
-   external_node_modules = ["@supabase/supabase-js"]
-
