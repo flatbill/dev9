@@ -1,4 +1,5 @@
-[functions]
+  [functions]
+  node_bundler = "esbuild"
    directory = "functions"
  [functions.readTurso]
    external_node_modules = ["@libsql/client"]
