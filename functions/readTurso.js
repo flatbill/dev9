@@ -9,7 +9,7 @@ import { createClient } from "@libsql/client"
 
 exports.handler = async (event, context) => {
   console.log('11 running Netlify lambda function: readTurso')
-  let turso = createClient({
+  let turso1 = createClient({
     url: process.env.tursoDbUrl,
     authToken: process.env.tursoAuthToken
   })
@@ -24,7 +24,18 @@ exports.handler = async (event, context) => {
   console.log('mySqlCmd:')
   console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
-  let res =  turso.execute(mySqlCmd)
+  // let res =  turso1.execute(mySqlCmd)
+  //
+  try {
+    const result = await turso1.execute({
+      sql: 'SELECT * FROM guitars',
+    });
+
+    console.log(result.rows); // Array of rows
+  } catch (error) {
+    console.error('36 Error:', error);
+  }
+  //
   console.log('27 done not-awaiting turso execute.')
   let myResponse = {
     statusCode: 200,
