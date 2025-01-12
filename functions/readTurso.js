@@ -15,6 +15,16 @@ exports.handler = async (event, context) => {
   })
   console.log('16 turso create client ran.')
   let qsParms = event.queryStringParameters
+  console.log('18 querystring parameters:')
+  console.log(qsParms)
+  console.log('20 setting mySqlCmd:')
+  let mySqlCmd = 'SELECT * FROM GUITARS'
+    // "SELECT * FROM " + tblNm +
+    // " WHERE " + keyFldNm  + ' = ' + keyFldVal 
+  console.log('mySqlCmd:')
+  console.log(mySqlCmd)
+  let res = await this.turso.execute(mySqlCmd)
+  console.log('27 done awaiting turso execute.')
   let myResponse = {
     statusCode: 200,
     headers: {'Access-Control-Allow-Origin': '*'},
