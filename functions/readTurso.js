@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
   console.log('20 setting mySqlCmd:')
   // let mySqlCmd = 'SELECT * FROM guitars WHERE  make = "Washburn" '
   let mySqlCmd = 'SELECT * FROM '
-  + "guitars" 
+  + qsParms.tbl
   + ' WHERE  make = ' + '"Washburn" '
     // "SELECT * FROM " + tbl +
     // " WHERE " + keyFldNm  + ' = ' + keyFldVal 
