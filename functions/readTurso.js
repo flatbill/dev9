@@ -21,15 +21,13 @@ exports.handler = async (event, context) => {
   let mySqlCmd = 'SELECT * FROM GUITARS'
     // "SELECT * FROM " + tblNm +
     // " WHERE " + keyFldNm  + ' = ' + keyFldVal 
-  console.log('mySqlCmd:')
+  console.log('24 mySqlCmd:')
   console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
-  let res =   turso1.execute(mySqlCmd)
-  // .then(console.log('running .then of turso1 execute.'))
-  // .catch(console.log('ya hit an error.'))
-  //
-  //
-  console.log('32 done not-awaiting turso execute.')
+  let res =  await turso1.execute(mySqlCmd)
+  console.log('28 res:')
+  console.table(res)
+  console.log('32 done awaiting turso execute.')
   let myResponse = {
     statusCode: 200,
     headers: {'Access-Control-Allow-Origin': '*'},
