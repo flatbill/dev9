@@ -8,12 +8,12 @@ import { createClient } from "@libsql/client"
 //  
 
 exports.handler = async (event, context) => {
-  console.log('15 running Netlify lambda function: readTurso')
+  console.log('11 running Netlify lambda function: readTurso')
   let turso = createClient({
-    url: process.env.TURSO_DATABASE_URL,
-    authToken: process.env.TURSO_AUTH_TOKEN
+    url: process.env.tursoDbUrl,
+    authToken: process.env.tursoAuthToken
   })
-  
+  console.log('16 turso create client ran.')
   let qsParms = event.queryStringParameters
   let myResponse = {
     statusCode: 200,
