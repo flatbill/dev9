@@ -10,22 +10,9 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/compiler": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
-    "@angular/platform-browser": "^19.0.0",
-    "@angular/platform-browser-dynamic": "^19.0.0",
-    "@angular/router": "^19.0.0",
-    "@emailjs/browser": "^4.4.1",
-    "@libsql/client": "^0.14.0",
+   "@libsql/client": "^0.14.0",
     "@netlify/functions": "^3.0.0",
-    "@supabase/supabase-js": "^2.47.12",
-    "bulma": "^1.0.2",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "@supabase/supabase-js": "^2.47.12"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.5",
