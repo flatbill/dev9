@@ -26,15 +26,6 @@ exports.handler = async (event, context) => {
   // let res = await this.turso.execute(mySqlCmd)
   // let res =  turso1.execute(mySqlCmd)
   //
-  try {
-    const result = await turso1.execute({
-      sql: 'SELECT * FROM guitars',
-    });
-
-    console.log(result.rows); // Array of rows
-  } catch (error) {
-    console.error('36 Error:', error);
-  }
   //
   console.log('27 done not-awaiting turso execute.')
   let myResponse = {
