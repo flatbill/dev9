@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
   console.log('mySqlCmd:')
   console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
-  let res =  await turso1.execute(mySqlCmd)
+  let res =   turso1.execute(mySqlCmd)
   // .then(console.log('running .then of turso1 execute.'))
   // .catch(console.log('ya hit an error.'))
   //
