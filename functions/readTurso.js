@@ -29,7 +29,7 @@ exports.handler = async (event, context) => {
   // .catch(console.log('ya hit an error.'))
   //
   //
-  console.log('27 done not-awaiting turso execute.')
+  console.log('32 done not-awaiting turso execute.')
   let myResponse = {
     statusCode: 200,
     headers: {'Access-Control-Allow-Origin': '*'},
