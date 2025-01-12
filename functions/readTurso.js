@@ -30,11 +30,10 @@ exports.handler = async (event, context) => {
   console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
   let res =  await turso1.execute(mySqlCmd)
+  console.log('33 done awaiting turso execute.')
+
   console.log('28 res:')
   console.table(res)
-    // console.log('tblNm:')
-    // console.log(tblNm)
-    // console.log(res)
     console.log('res.columns:')
     console.log(res.columns)
     console.log(res.columns[0])
@@ -52,7 +51,6 @@ exports.handler = async (event, context) => {
       // } 
     }//end for
 
-  console.log('53 done awaiting turso execute.')
   let myResponse = {
     statusCode: 200,
     headers: {'Access-Control-Allow-Origin': '*'},
