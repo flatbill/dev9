@@ -24,7 +24,9 @@ exports.handler = async (event, context) => {
   console.log('mySqlCmd:')
   console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
-  // let res =  turso1.execute(mySqlCmd)
+  let res =  turso1.execute(mySqlCmd)
+  .then()
+  .catch()
   //
   //
   console.log('27 done not-awaiting turso execute.')
