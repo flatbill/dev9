@@ -39,14 +39,12 @@ exports.handler = async (event, context) => {
     console.log(res.rows[0] )
     console.log('loop thru rows:')
     for (let x=0;x<res.rows.length;x++){
-      if (tblNm=='guitars'){
-        console.log(res.rows[x]['make'])
-        console.log(res.rows[x]['tone'])
-      } 
-      if (tblNm=='qtQuestions'){
-        console.log(res.rows[x]['id'])
-        console.log(res.rows[x]['questTxt'])
-      } 
+      console.log(res.rows[x]['make'])
+      console.log(res.rows[x]['tone'])
+      // if (tblNm=='qtQuestions'){
+      //   console.log(res.rows[x]['id'])
+      //   console.log(res.rows[x]['questTxt'])
+      // } 
     }//end for
 
   console.log('53 done awaiting turso execute.')
