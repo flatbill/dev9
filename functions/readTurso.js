@@ -18,6 +18,7 @@ exports.handler = async (event, context) => {
   console.log('18aaa querystring parameters:')
   console.log(qsParms)
   console.log(qsParms.tblNm)
+  console.log(qsParms.make)
   zingo = 'Washburn'
   console.log('20 setting mySqlCmd:')
   // let mySqlCmd = 'SELECT * FROM guitars WHERE  make = "Washburn" '
