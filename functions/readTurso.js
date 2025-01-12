@@ -27,7 +27,29 @@ exports.handler = async (event, context) => {
   let res =  await turso1.execute(mySqlCmd)
   console.log('28 res:')
   console.table(res)
-  console.log('32 done awaiting turso execute.')
+    // console.log('tblNm:')
+    // console.log(tblNm)
+    // console.log(res)
+    console.log('res.columns:')
+    console.log(res.columns)
+    console.log(res.columns[0])
+    console.log('res.rows.length:')
+    console.log(res.rows.length)
+    console.log('res.rows[0]:')
+    console.log(res.rows[0] )
+    console.log('loop thru rows:')
+    for (let x=0;x<res.rows.length;x++){
+      if (tblNm=='guitars'){
+        console.log(res.rows[x]['make'])
+        console.log(res.rows[x]['tone'])
+      } 
+      if (tblNm=='qtQuestions'){
+        console.log(res.rows[x]['id'])
+        console.log(res.rows[x]['questTxt'])
+      } 
+    }//end for
+
+  console.log('53 done awaiting turso execute.')
   let myResponse = {
     statusCode: 200,
     headers: {'Access-Control-Allow-Origin': '*'},
