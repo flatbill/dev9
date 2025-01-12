@@ -24,8 +24,8 @@ exports.handler = async (event, context) => {
   console.log('mySqlCmd:')
   console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
-  let res = await turso.execute(mySqlCmd)
-  console.log('27 done awaiting turso execute.')
+  let res =  turso.execute(mySqlCmd)
+  console.log('27 done not-awaiting turso execute.')
   let myResponse = {
     statusCode: 200,
     headers: {'Access-Control-Allow-Origin': '*'},
