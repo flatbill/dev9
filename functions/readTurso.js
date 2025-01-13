@@ -29,15 +29,22 @@ for (const [key, value] of Object.entries(qsParms)) {
 
   console.log('27 setting mySqlCmd:')
   // let mySqlCmd = 'SELECT * FROM guitars WHERE  make = "Washburn" '
-  let mySqlCmd = 'SELECT * FROM '
-  + qsParms.tblNm
-  + ' WHERE  make = ' //+ '"Washburn" '
-  + "'" + qsParms.make + "'" 
+  let mySqlCmd = 'SELECT * FROM '  + qsParms.tblNm + ' WHERE '
+  let mySqlCmdPart2 = ' '
+    for (const [key, value] of Object.entries(qsParms)) {
+      console.log('iterating qsParms........')
+      mySqlCmdPart2 += key + ' = '
+      + "'" + value + "'"
+  }
+  mySqlCmd += mySqlCmdPart2
+  console.log('40 my new sql command:')
+  console.log(mySqlCmd)
+  // + "'" + qsParms.make + "'" 
 
     // "SELECT * FROM " + tbl +
     // " WHERE " + keyFldNm  + ' = ' + keyFldVal 
   console.log('24 mySqlCmd:')
-  console.log(mySqlCmd)
+  // console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
   let res =  await turso1.execute(mySqlCmd)
   console.log('33 done awaiting turso execute.')
