@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
   let mySqlCmd = 'SELECT * FROM '
   + qsParms.tblNm
   + ' WHERE  make = ' //+ '"Washburn" '
-  + qsParms.make
+  + "'" + qsParms.make + "'" 
 
     // "SELECT * FROM " + tbl +
     // " WHERE " + keyFldNm  + ' = ' + keyFldVal 
