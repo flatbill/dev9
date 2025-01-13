@@ -49,7 +49,7 @@ exports.handler = async (event, context) => {
     // "SELECT * FROM " + tbl +
     // " WHERE " + keyFldNm  + ' = ' + keyFldVal 
   console.log('24 mySqlCmd:')
-  // console.log(mySqlCmd)
+  console.log(mySqlCmd)
   // let res = await this.turso.execute(mySqlCmd)
   let res =  await turso1.execute(mySqlCmd)
   console.log('33 done awaiting turso execute.')
