@@ -20,14 +20,12 @@ exports.handler = async (event, context) => {
   console.log(qsParms.tblNm)
   console.log(qsParms.make)
   // zingo = 'Washburn'
-  const obj = { a: 1, b: 2, c: 3 };
-
 
 for (const [key, value] of Object.entries(qsParms)) {
-  console.log('iterating qsParms...')
-  console.log(key + ": " + value);
+  console.log('iterating qsParms........')
+  console.log(key)
+  console.log( value)
 }
-
 
   console.log('27 setting mySqlCmd:')
   // let mySqlCmd = 'SELECT * FROM guitars WHERE  make = "Washburn" '
