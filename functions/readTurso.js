@@ -33,9 +33,11 @@ for (const [key, value] of Object.entries(qsParms)) {
   let mySqlCmdPart2 = ' '
     for (const [key, value] of Object.entries(qsParms)) {
       console.log('iterating qsParms........')
-      mySqlCmdPart2 += key + ' = '
+      mySqlCmdPart2 +=  + key + ' = '
       + "'" + value + "'"
-  }
+      + ' and '
+    }
+  mySqlCmdPart2 = mySqlCmdPart2.slice(0, -5) // removes extra ' and '
   mySqlCmd += mySqlCmdPart2
   console.log('40 my new sql command:')
   console.log(mySqlCmd)
