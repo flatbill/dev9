@@ -32,11 +32,13 @@ exports.handler = async (event, context) => {
   let mySqlCmd = 'SELECT * FROM '  + qsParms.tblNm + ' WHERE '
   let mySqlCmdPart2 = ' '
     for (const [key, value] of Object.entries(qsParms)) {
-      console.log('iterating qsParms........')
-      mySqlCmdPart2 +=  key + ' = '
-      + "'" + value + "'"
-      + ' and '
-      console.log(mySqlCmdPart2)
+      if (key!= 'tblNm'){
+        console.log('iterating qsParms........')
+        mySqlCmdPart2 +=  key + ' = '
+        + "'" + value + "'"
+        + ' and '
+        console.log(mySqlCmdPart2)
+      }// end if
     }
   mySqlCmdPart2 = mySqlCmdPart2.slice(0, -5) // removes extra ' and '
   mySqlCmd += mySqlCmdPart2
