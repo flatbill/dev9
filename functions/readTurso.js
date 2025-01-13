@@ -21,11 +21,11 @@ exports.handler = async (event, context) => {
   console.log(qsParms.make)
   // zingo = 'Washburn'
 
-for (const [key, value] of Object.entries(qsParms)) {
-  console.log('iterating qsParms........')
-  console.log(key)
-  console.log( value)
-}
+// for (const [key, value] of Object.entries(qsParms)) {
+//   console.log('iterating qsParms........')
+//   console.log(key)
+//   console.log( value)
+// }
 
   console.log('27 setting mySqlCmd:')
   // let mySqlCmd = 'SELECT * FROM guitars WHERE  make = "Washburn" '
@@ -33,9 +33,10 @@ for (const [key, value] of Object.entries(qsParms)) {
   let mySqlCmdPart2 = ' '
     for (const [key, value] of Object.entries(qsParms)) {
       console.log('iterating qsParms........')
-      mySqlCmdPart2 +=  + key + ' = '
+      mySqlCmdPart2 +=  key + ' = '
       + "'" + value + "'"
       + ' and '
+      console.log(mySqlCmdPart2)
     }
   mySqlCmdPart2 = mySqlCmdPart2.slice(0, -5) // removes extra ' and '
   mySqlCmd += mySqlCmdPart2
