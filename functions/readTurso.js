@@ -63,21 +63,23 @@ exports.handler = async (event, context) => {
     console.log(res.rows.length)
     console.log('res.rows[0]:')
     console.log(res.rows[0] )
-    console.log('loop thru rows:')
-    for (let x=0;x<res.rows.length;x++){
-      console.log(res.rows[x]['make'])
-      console.log(res.rows[x]['tone'])
-      // if (tblNm=='qtQuestions'){
-      //   console.log(res.rows[x]['id'])
-      //   console.log(res.rows[x]['questTxt'])
-      // } 
-    }//end for
+    // console.log('loop thru rows:')
+    // for (let x=0;x<res.rows.length;x++){
+    //   console.log(res.rows[x]['make'])
+    //   console.log(res.rows[x]['tone'])
+    //   // if (tblNm=='qtQuestions'){
+    //   //   console.log(res.rows[x]['id'])
+    //   //   console.log(res.rows[x]['questTxt'])
+    //   // } 
+    // }//end for
 
   let myResponse = {
     statusCode: 200,
     headers: {'Access-Control-Allow-Origin': '*'},
-    body:  JSON.stringify('ratsyMatsy')
+    body:  JSON.stringify(res.rows)
   }
+  // body:  JSON.stringify('ratsyMatsy')
+
   console.log('22 readTurso.js   myResponse.body:')
   console.log(myResponse.body)
   console.log('we reached the end of readTurso.js. ready to return.')
