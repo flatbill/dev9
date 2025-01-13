@@ -20,6 +20,10 @@ exports.handler = async (event, context) => {
   console.log(qsParms.tblNm)
   console.log(qsParms.make)
   // zingo = 'Washburn'
+  for (let i=0;  i < qsParms.length; i++){
+    console.log(qsParms[i])
+d  } // end for loop
+
   console.log('20 setting mySqlCmd:')
   // let mySqlCmd = 'SELECT * FROM guitars WHERE  make = "Washburn" '
   let mySqlCmd = 'SELECT * FROM '
