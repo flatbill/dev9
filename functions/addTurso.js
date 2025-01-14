@@ -14,12 +14,12 @@ exports.handler = async (event, context) => {
   // "INSERT INTO " + tblNm 
   // +  ' ( '  + fldNms  + ' ) VALUES ( ' + fldVals + ' )'
 
-  let mySqlCmd = 'INSERT INTO '  + qsParms.tblNm +  ' ( '
+  let mySqlCmd = 'BEGIN; INSERT INTO '  + qsParms.tblNm +  ' ( '
   let mySqlCmdPart2 = ' '
   let mySqlCmdPart3 = ' ) VALUES ( '
   let mySqlCmdPart4 = ' '
   let mySqlCmdPart5 = ' )'
-  //  OUTPUT Inserted.ID ???
+  let mySqlCmdPart6 = '; SELECT last_insert_rowid(); COMMIT; '
       
   for (const [key, value] of Object.entries(qsParms)) {
     if (key!= 'tblNm'){
@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
   }// end for
   mySqlCmdPart2= mySqlCmdPart2.slice(0, -2) // removes extra comma
   mySqlCmdPart4= mySqlCmdPart4.slice(0, -2) // removes extra comma
-  mySqlCmd += mySqlCmdPart2 + mySqlCmdPart3 + mySqlCmdPart4 + mySqlCmdPart5
+  mySqlCmd += mySqlCmdPart2 + mySqlCmdPart3 + mySqlCmdPart4 + mySqlCmdPart5 + mySqlCmdPart6
   console.log('34 my plussed-up sql command:')
   console.log(mySqlCmd)
   let res =  await turso1.execute(mySqlCmd)
