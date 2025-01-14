@@ -29,7 +29,7 @@ exports.handler = async (event, context) => {
     }// end if
   }// end for
   mySqlCmdPart2= mySqlCmdPart2.slice(0, -2) // removes extra comma
-  mySqlCmdPart4= mySqlCmdPart2.slice(0, -2) // removes extra comma
+  mySqlCmdPart4= mySqlCmdPart4.slice(0, -2) // removes extra comma
   mySqlCmd += mySqlCmdPart2 + mySqlCmdPart3 + mySqlCmdPart4 + mySqlCmdPart5
   console.log('34 my plussed-up sql command:')
   console.log(mySqlCmd)
