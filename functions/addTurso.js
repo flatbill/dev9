@@ -24,13 +24,14 @@ exports.handler = async (event, context) => {
   for (const [key, value] of Object.entries(qsParms)) {
     if (key!= 'tblNm'){
       console.log('iterating qsParms........')
-      mySqlCmdPart2 +=  key   + ','
+      mySqlCmdPart2 +=  key   + ', '
       mySqlCmdPart4 +=  value + ', ' 
     }// end if
   }// end for
-
+  mySqlCmdPart2= mySqlCmdPart2.slice(0, -2) // removes extra comma
+  mySqlCmdPart4= mySqlCmdPart2.slice(0, -2) // removes extra comma
   mySqlCmd += mySqlCmdPart2 + mySqlCmdPart3 + mySqlCmdPart4 + mySqlCmdPart5
-  console.log('40 my plussed-up sql command:')
+  console.log('34 my plussed-up sql command:')
   console.log(mySqlCmd)
   let res =  await turso1.execute(mySqlCmd)
   console.log('33 done awaiting turso execute.')
