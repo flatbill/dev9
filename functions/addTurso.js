@@ -36,6 +36,7 @@ exports.handler = async (event, context) => {
   // console.log(lastRowInserted)
   // console.log('28 res:')
   console.table(res)
+  console.log(res.lastInsertRowid )
   // console.log('res.columns:')
   // console.log(res.columns)
   // console.log(res.columns[0])
