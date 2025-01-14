@@ -30,7 +30,10 @@ exports.handler = async (event, context) => {
   console.log('34 my plussed-up sql command:')
   console.log(mySqlCmd)
   let res =  await turso1.execute(mySqlCmd)
+  let lastRowInserted = await turso1.execute('SELECT last_insert_rowid()')
+
   console.log('33 done awaiting turso execute.')
+  console.log(lastRowInserted)
   // console.log('28 res:')
   // console.table(res)
   // console.log('res.columns:')
