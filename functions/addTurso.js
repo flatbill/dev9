@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
     if (key!= 'tblNm'){
       console.log('iterating qsParms........')
       mySqlCmdPart2 +=  key   + ', '
-      mySqlCmdPart4 +=  value + ', ' 
+      mySqlCmdPart4 +=  "'" +value + "'" + ', ' 
     }// end if
   }// end for
   mySqlCmdPart2= mySqlCmdPart2.slice(0, -2) // removes extra comma
