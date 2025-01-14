@@ -32,6 +32,11 @@ exports.handler = async (event, context) => {
   let res =  await turso1.execute(mySqlCmd)
   let lastRowInserted = await turso1.execute('SELECT last_insert_rowid()')
 
+// 1 second delay
+setTimeout(function(){
+  console.log("Executed after 1 second");
+}, 1000);
+
   console.log('33 done awaiting turso execute.')
   console.log(lastRowInserted)
   // console.log('28 res:')
