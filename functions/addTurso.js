@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
   let mySqlCmdPart2 = ' '
   let mySqlCmdPart3 = ' ) VALUES ( '
   let mySqlCmdPart4 = ' '
-  let mySqlCmdPart5 = ' )'
+  let mySqlCmdPart5 = ' ) RETURNING rowid, * '
   lastInsertRowId = 0
       
   for (const [key, value] of Object.entries(qsParms)) {
