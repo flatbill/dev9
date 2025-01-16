@@ -9,8 +9,8 @@ exports.handler = async (event, context) => {
   let qsParms = event.queryStringParameters
   console.log('18aaa querystring parameters:')
   console.log(qsParms)
-  console.log(qsParms.tblNm)
-  console.log(qsParms.make)
+  // console.log(qsParms.tblNm)
+  // console.log(qsParms.make)
   console.log('27 setting mySqlCmd:')
   let mySqlCmd = 'SELECT * FROM '  + qsParms.tblNm + ' WHERE '
   let mySqlCmdPart2 = ' '
