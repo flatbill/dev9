@@ -11,10 +11,10 @@ exports.handler = async (event, context) => {
   console.log(qsParms)
   console.log('12 chgTurso lambda setting mySqlCmd:')
   let mySqlCmd = ' UPDATE '  + qsParms.tblNm 
-  let mySqlCmdPart2 = ' SET ( '
-  let mySqlCmdPart3 = ' )  '
+  let mySqlCmdPart2 = ' SET  '
+  let mySqlCmdPart3 = '   '
   let mySqlCmdPart4 =  " WHERE rowid='39' "
-  let mySqlCmdPart5 = '  RETURNING rowid, * '
+  let mySqlCmdPart5 = ' ' //'  RETURNING rowid, * '
       
   for (const [key, value] of Object.entries(qsParms)) {
     if (key!= 'tblNm' && key!='rowid'){
@@ -28,8 +28,8 @@ exports.handler = async (event, context) => {
   mySqlCmdPart2 = mySqlCmdPart2.slice(0, -3) // removes extra ' , '
   mySqlCmd += mySqlCmdPart2 +mySqlCmdPart3 +mySqlCmdPart4 +mySqlCmdPart5
 
-  mySqlCmd = 
-  "UPDATE guitars    SET make = 'Martinii', tone = 'squirlley'   WHERE rowid = 39"
+  // mySqlCmd = 
+  // "UPDATE guitars    SET make = 'Martinii', tone = 'squirlley'   WHERE rowid = 39"
   console.log('29 chgTurso.js lambda my new sql command:')
   console.log(mySqlCmd)
    let res =  await turso1.execute(mySqlCmd)
