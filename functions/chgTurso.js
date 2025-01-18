@@ -10,8 +10,8 @@ exports.handler = async (event, context) => {
   console.log('10aaa querystring parameters:')
   console.log(qsParms)
   console.log('12 chgTurso lambda setting mySqlCmd:')
-  let mySqlCmd = ' UPDATE '  + qsParms.tblNm +  ' WHERE '
-  let mySqlCmdPart2 = ' '
+  let mySqlCmd = ' UPDATE '  + qsParms.tblNm +  ' WHERE rowid=39'
+  let mySqlCmdPart2 = ' SET ( '
   let mySqlCmdPart3 = '   '
   let mySqlCmdPart4 = '   '
   let mySqlCmdPart5 = '  RETURNING rowid, * '
@@ -25,8 +25,10 @@ exports.handler = async (event, context) => {
       console.log(mySqlCmdPart2)
     }// end if
   }// end for
-  mySqlCmdPart2 = mySqlCmdPart2.slice(0, -5) // removes extra ' and '
-  mySqlCmd += mySqlCmdPart2 + mySqlCmdPart3
+  // mySqlCmdPart2 = mySqlCmdPart2.slice(0, -5) // removes extra ' and '
+  mySqlCmd += mySqlCmdPart2 +mySqlCmdPart3 +mySqlCmdPart4 +mySqlCmdPart5
+
+
   console.log('29 chgTurso.js lambda my new sql command:')
   console.log(mySqlCmd)
   let goobers = 'gooberPeas'
