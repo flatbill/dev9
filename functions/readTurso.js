@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
   // console.log(qsParms.tblNm)
   // console.log(qsParms.make)
   console.log('27 setting mySqlCmd:')
-  let mySqlCmd = 'SELECT * FROM '  + qsParms.tblNm + ' WHERE '
+  let mySqlCmd = 'SELECT rowid, * FROM '  + qsParms.tblNm + ' WHERE '
   let mySqlCmdPart2 = ' '
   for (const [key, value] of Object.entries(qsParms)) {
       if (key!= 'tblNm'){
