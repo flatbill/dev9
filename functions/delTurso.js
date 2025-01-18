@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
   console.log('10aaa querystring parameters:')
   console.log(qsParms)
   console.log('12 delTurso lambda setting mySqlCmd:')
-  let mySqlCmd = 'DELETE FROM'  + qsParms.tblNm +  ' WHERE '
+  let mySqlCmd = 'DELETE FROM '  + qsParms.tblNm +  ' WHERE '
   let mySqlCmdPart2 = ' '
   let mySqlCmdPart3 = '  RETURNING rowid, * '
   // lastInsertRowId = 0
