@@ -14,6 +14,7 @@ exports.handler = async (event, context) => {
   let mySqlCmdPart2 = ' SET  '
   let mySqlCmdPart3 = '   '
   let mySqlCmdPart4 =  " WHERE rowid='39' "
+  let mySqlCmdPart444 =  " WHERE   "
   let mySqlCmdPart5 = ' ' //'  RETURNING rowid, * '
       
   for (const [key, value] of Object.entries(qsParms)) {
@@ -22,12 +23,18 @@ exports.handler = async (event, context) => {
       mySqlCmdPart2 +=  key + ' = '
       + "'" + value + "'"
       + ' , '
-      console.log(mySqlCmdPart2)
-    }// end if
-  }// end for
+    }
+    if (key!= 'tblNm' && key=='rowid'){
+        mySqlCmdPart444 +=  key + ' = '
+        + "'" + value + "'"
+        + ' , '
+    }
+  }// end for 
   mySqlCmdPart2 = mySqlCmdPart2.slice(0, -3) // removes extra ' , '
   mySqlCmd += mySqlCmdPart2 +mySqlCmdPart3 +mySqlCmdPart4 +mySqlCmdPart5
 
+let mingo = mySqlCmd + mySqlCmdPart2 +mySqlCmdPart3 +mySqlCmdPart444 +mySqlCmdPart5
+console.log('399999999' , mingo)
   // mySqlCmd = 
   // "UPDATE guitars    SET make = 'Martinii', tone = 'squirlley'   WHERE rowid = 39"
   console.log('29 chgTurso.js lambda my new sql command:')
