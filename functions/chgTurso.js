@@ -31,8 +31,6 @@ exports.handler = async (event, context) => {
 
   console.log('29 chgTurso.js lambda my new sql command:')
   console.log(mySqlCmd)
-  let goobers = 'gooberPeas'
-  return goobers // billy remove ths later
 
   let res =  await turso1.execute(mySqlCmd)
   console.log('32 chgTurso.js done awaiting turso execute.')
