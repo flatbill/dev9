@@ -21,18 +21,18 @@ exports.handler = async (event, context) => {
       console.log('chgTurso.js lambda iterating qsParms........')
       mySqlCmdPart2 +=  key + ' = '
       + "'" + value + "'"
-      + ' and '
+      + ' , '
       console.log(mySqlCmdPart2)
     }// end if
   }// end for
-  mySqlCmdPart2 = mySqlCmdPart2.slice(0, -5) // removes extra ' and '
+  mySqlCmdPart2 = mySqlCmdPart2.slice(0, -3) // removes extra ' , '
   mySqlCmd += mySqlCmdPart2 +mySqlCmdPart3 +mySqlCmdPart4 +mySqlCmdPart5
 
-
+  mySqlCmd = 
+  "UPDATE guitars    SET make = 'Martinii', tone = 'squirlley'   WHERE rowid = 39"
   console.log('29 chgTurso.js lambda my new sql command:')
   console.log(mySqlCmd)
-
-  let res =  await turso1.execute(mySqlCmd)
+   let res =  await turso1.execute(mySqlCmd)
   console.log('32 chgTurso.js done awaiting turso execute.')
   console.log('33 res:')
   console.table(res) //res has info about the newly chgeted row.
