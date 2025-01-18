@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
   console.log('10aaa querystring parameters:')
   console.log(qsParms)
   console.log('12 chgTurso lambda setting mySqlCmd:')
-  let mySqlCmd = ' UPDATE '  + qsParms.tblNm +  ' WHERE rowid=39'
+  let mySqlCmd = ' UPDATE '  + qsParms.tblNm +  " WHERE rowid='39' "
   let mySqlCmdPart2 = ' SET ( '
   let mySqlCmdPart3 = ' )  '
   let mySqlCmdPart4 = '   '
