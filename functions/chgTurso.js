@@ -13,17 +13,17 @@ exports.handler = async (event, context) => {
   let mySqlCmd = ' UPDATE '  + qsParms.tblNm 
   let mySqlCmdPart2 = ' SET  '
   let mySqlCmdPart3 = ' WHERE   '
-  let mySqlCmdPart4 =  "     "
+  let mySqlCmdPart4 =  "     " //build the where clause.
   let mySqlCmdPart5 = ' ' //'  RETURNING rowid, * '
       
   for (const [key, value] of Object.entries(qsParms)) {
-    if (key!= 'tblNm' && key!='rowid'){
+    if (key!= 'tblNm' && key!='dbkey' && key!='rowid'){
       console.log('chgTurso.js lambda iterating qsParms........')
       mySqlCmdPart2 +=  key + ' = '
       + "'" + value + "'"
       + ' , '
     }
-    if (key!= 'tblNm' && key=='rowid'){
+    if ( key=='rowid'){
         mySqlCmdPart4 +=  key + ' = '
         + "'" + value + "'"
         + ' , '
