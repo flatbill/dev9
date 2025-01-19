@@ -17,11 +17,11 @@ exports.handler = async (event, context) => {
   let mySqlCmdPart5 = ' ) RETURNING rowid, * '
   lastInsertRowId = 0
       
-  for (const [key, value] of Object.entries(qsParms)) {
-    if (key!= 'tblNm'){
+  for (const [fldKey, fldVal] of Object.entries(qsParms)) {
+    if (fldKey!= 'tblNm'){
       console.log('iterating qsParms........')
-      mySqlCmdPart2 +=  key   + ', '
-      mySqlCmdPart4 +=  "'" +value + "'" + ', ' 
+      mySqlCmdPart2 +=  fldKey   + ', '
+      mySqlCmdPart4 +=  "'" +fldVal + "'" + ', ' 
     }// end if
   }// end for
   mySqlCmdPart2= mySqlCmdPart2.slice(0, -2) // removes extra comma

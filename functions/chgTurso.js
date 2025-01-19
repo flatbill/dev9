@@ -16,16 +16,16 @@ exports.handler = async (event, context) => {
   let mySqlCmdPart4 =  " " //build the where clause.
   let mySqlCmdPart5 = ' ' //'  RETURNING rowid, * '
       
-  for (const [fldNm, val] of Object.entries(qsParms)) {
+  for (const [fldNm, fldVal] of Object.entries(qsParms)) {
     if (fldNm!= 'tblNm'  && fldNm!='rowid'){
       console.log('chgTurso.js lambda iterating qsParms........')
       mySqlCmdPart2 +=  fldNm + ' = '
-      + "'" + val + "'"
+      + "'" + fldVal + "'"
       + ' , '
     }
     if ( fldNm=='rowid'){
         mySqlCmdPart4 +=  fldNm + ' = '
-        + "'" + value + "'"
+        + "'" + fldVal + "'"
         + ' , '
     }
   }// end for 

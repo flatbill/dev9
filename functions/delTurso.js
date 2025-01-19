@@ -15,11 +15,11 @@ exports.handler = async (event, context) => {
   let mySqlCmdPart3 = '  RETURNING rowid, * '
   // lastInsertRowId = 0
       
-  for (const [key, value] of Object.entries(qsParms)) {
-    if (key!= 'tblNm'){
+  for (const [fldKey, fldVal] of Object.entries(qsParms)) {
+    if (fldKey!= 'tblNm'){
       console.log('delTurso.js lambda iterating qsParms........')
-      mySqlCmdPart2 +=  key + ' = '
-      + "'" + value + "'"
+      mySqlCmdPart2 +=  fldKey + ' = '
+      + "'" + fldVal + "'"
       + ' and '
       console.log(mySqlCmdPart2)
     }// end if

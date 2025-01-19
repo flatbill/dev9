@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
     if (fldNm!= 'tblNm'){
       console.log('delTurso.js lambda iterating qsParms........')
       mySqlCmdPart2 +=  fldNm + ' = '
-      + "'" + fldfldVal + "'"
+      + "'" + fldVal + "'"
       + ' and '
       console.log(mySqlCmdPart2)
     }// end if
