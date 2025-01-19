@@ -23,8 +23,8 @@ exports.handler = async (event, context) => {
       + "'" + val + "'"
       + ' , '
     }
-    if ( key=='rowid'){
-        mySqlCmdPart4 +=  key + ' = '
+    if ( fldNm=='rowid'){
+        mySqlCmdPart4 +=  fldNm + ' = '
         + "'" + value + "'"
         + ' , '
     }
@@ -33,8 +33,6 @@ exports.handler = async (event, context) => {
   mySqlCmdPart4 = mySqlCmdPart4.slice(0, -3) // removes extra ' , '
   mySqlCmd += mySqlCmdPart2 +mySqlCmdPart3 +mySqlCmdPart4 +mySqlCmdPart5
 
-  // mySqlCmd = 
-  // "UPDATE guitars    SET make = 'Martinii', tone = 'squirlley'   WHERE rowid = 39"
   console.log('29 chgTurso.js lambda my new sql command:')
   console.log(mySqlCmd)
    let res =  await turso1.execute(mySqlCmd)
