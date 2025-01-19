@@ -9,6 +9,8 @@
   external_node_modules = ["@libsql/client"]
 [functions.chgTurso]
   external_node_modules = ["@libsql/client"]
+[functions.delMuliTurso]
+  external_node_modules = ["@libsql/client"]
 
 [functions.readSupabase]
    external_node_modules = ["@supabase/supabase-js"]
