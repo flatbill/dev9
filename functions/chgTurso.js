@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
   let mySqlCmdPart2 = ' SET  '
   let mySqlCmdPart3 = ' WHERE '
   let mySqlCmdPart4 =  " " //build the where clause.
-  let mySqlCmdPart5 = ' ' //'  RETURNING rowid, * '
+  let mySqlCmdPart5 = ' RETURNING rowid, * '
       
   for (const [fldNm, fldVal] of Object.entries(qsParms)) {
     if (fldNm!= 'tblNm'  && fldNm!='rowid'){
