@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
     url: process.env.TURSO_DATABASE_URL,
     authToken: process.env.TURSO_AUTH_TOKEN
   })
-  console.log('16 turso create client ran.')
+  console.log('8 turso create client ran.')
   let qsParms = event.queryStringParameters
   console.log('18aaa querystring parameters:')
   console.log(qsParms)
