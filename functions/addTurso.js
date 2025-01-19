@@ -39,6 +39,6 @@ exports.handler = async (event, context) => {
     headers: {'Access-Control-Allow-Origin': '*'},
     body:  JSON.stringify(res)
   }
-  console.log('we reached the end of aaTurso.js. ready to return.')
+  console.log('we reached the end of addTurso.js. ready to return.')
   return myResponse   
 } // end export.handler 
