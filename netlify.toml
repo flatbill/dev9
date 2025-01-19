@@ -9,7 +9,7 @@
   external_node_modules = ["@libsql/client"]
 [functions.chgTurso]
   external_node_modules = ["@libsql/client"]
-[functions.delMuliTurso]
+[functions.delTursoMulti]
   external_node_modules = ["@libsql/client"]
 
 [functions.readSupabase]
