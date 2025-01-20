@@ -15,7 +15,6 @@ exports.handler = async (event, context) => {
   let mySqlCmdPart3 = ' ) VALUES ( '
   let mySqlCmdPart4 = ' '
   let mySqlCmdPart5 = ' ) RETURNING rowid, * '
-  lastInsertRowId = 0
       
   for (const [fldKey, fldVal] of Object.entries(qsParms)) {
     if (fldKey!= 'tblNm'){

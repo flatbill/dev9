@@ -14,6 +14,7 @@ exports.handler = async (event, context) => {
   console.log('27 setting mySqlCmd:')
   let mySqlCmd = 'SELECT rowid, * FROM '  + qsParms.tblNm + ' WHERE '
   let mySqlCmdPart2 = ' '
+  let mySqlCmdPart3 = ' RETURNING rowid,*'
   for (const [fldKey, fldVal] of Object.entries(qsParms)) {
       if (fldKey!= 'tblNm'){
         console.log('iterating qsParms........')
@@ -24,7 +25,7 @@ exports.handler = async (event, context) => {
       }// end if
   }//end for
   mySqlCmdPart2 = mySqlCmdPart2.slice(0, -5) // removes extra ' and '
-  mySqlCmd += mySqlCmdPart2
+  mySqlCmd += mySqlCmdPart2 + mySqlCmdPart3
   console.log('40 my new sql command:')
   console.log(mySqlCmd)
   console.log('24 mySqlCmd:')
