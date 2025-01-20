@@ -14,7 +14,7 @@ exports.handler = async (event, context) => { //addTurso.js by qs parms
   let mySqlCmdPart2 = ' '
   let mySqlCmdPart3 = ' ) VALUES ( '
   let mySqlCmdPart4 = ' '
-  let mySqlCmdPart5 = ' ) RETURNING rowid, * '
+  let mySqlCmdPart5 = ' ) ' // RETURNING rowid, * ' ?? what duz it do ??
       
   for (const [fldKey, fldVal] of Object.entries(qsParms)) {
     if (fldKey!= 'tblNm'){
