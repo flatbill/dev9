@@ -1,5 +1,5 @@
 import { createClient } from "@libsql/client"
-exports.handler = async (event, context) => {
+exports.handler = async (event, context) => { //addTurso.js by qs parms
   console.log('11 running Netlify lambda function: addTurso')
   let turso1 = createClient({
     url: process.env.TURSO_DATABASE_URL,

@@ -1,5 +1,5 @@
 import { createClient } from "@libsql/client"
-exports.handler = async (event, context) => {
+exports.handler = async (event, context) => { //readTurso.js by qs parms
   console.log('11 running Netlify lambda function: readTurso')
   let turso1 = createClient({
     url: process.env.TURSO_DATABASE_URL,
@@ -9,13 +9,11 @@ exports.handler = async (event, context) => {
   let qsParms = event.queryStringParameters
   console.log('18aaa querystring parameters:')
   console.log(qsParms)
-  // console.log(qsParms.tblNm)
-  // console.log(qsParms.make)
   console.log('27 setting mySqlCmd:')
   let mySqlCmd = 'SELECT rowid, * FROM '  + qsParms.tblNm + ' WHERE '
   let mySqlCmdPart2 = ' '
-  let mySqlCmdPart3 = '' //' RETURNING rowid,*' ---returning duznt work
-  for (const [fldKey, fldVal] of Object.entries(qsParms)) {
+  let mySqlCmdPart3 = '' //' RETURNING rowid,*' --returning with SELECT duznt work
+  for (let [fldKey, fldVal] of Object.entries(qsParms)) {
       if (fldKey!= 'tblNm'){
         console.log('iterating qsParms........')
         mySqlCmdPart2 +=  fldKey + ' = '
