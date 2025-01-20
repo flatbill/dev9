@@ -1,5 +1,5 @@
 import { createClient } from "@libsql/client"
-exports.handler = async (event, context) => { //addTurso.js by qs parms
+exports.handler = async (event, context) => { //addTurso.js by qs p
   console.log('11 running Netlify lambda function: addTurso')
   let turso1 = createClient({
     url: process.env.TURSO_DATABASE_URL,
@@ -14,7 +14,7 @@ exports.handler = async (event, context) => { //addTurso.js by qs parms
   let mySqlCmdPart2 = ' '
   let mySqlCmdPart3 = ' ) VALUES ( '
   let mySqlCmdPart4 = ' '
-  let mySqlCmdPart5 = ' ) ' // RETURNING rowid, * ' ?? what duz it do ??
+  let mySqlCmdPart5 = ' ) RETURNING rowid, * '
       
   for (const [fldKey, fldVal] of Object.entries(qsParms)) {
     if (fldKey!= 'tblNm'){
