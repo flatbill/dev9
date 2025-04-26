@@ -18,9 +18,11 @@ exports.handler = async (event) => {
   console.log(mossy)
   console.log('reached line 6 of getEnvVars.js lambda')
   let response = {
-      statusCode: 200,
-      body: JSON.stringify(whichDb)
+     statusCode: 200,
+     headers: {'Access-Control-Allow-Origin': '*'},
+     body: JSON.stringify(whichDb)
   }
+  
   console.log('24 end of getEnvVars.js')
   return response
 };
