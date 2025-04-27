@@ -2,8 +2,8 @@
 exports.handler = async (event) => {
   let whichDb = '==noDatabase==' //default, maybe overWrite below.
   goodOriginsArray = [
-    'yyflytechfree.com',
-    'yybulmabarebones.netlify.app'
+    'flytechfree.com',
+    'bulmabarebones.netlify.app'
   ]
   let originn =  event.headers.origin
   let originnMatch = ''
