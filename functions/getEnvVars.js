@@ -1,24 +1,25 @@
-// import { createClient } from "@libsql/client"
-// let tursoUrl = process.env.tursoDbUrl
-// let tursoAuthToken = process.env.tursoAuthToken
-// let tursoClient = createClient()
-// this.turso = createClient({
-//   url: process.env.tursoDbUrl,
-//   authToken: process.env.tursoAuthToken
-// })
 
 exports.handler = async (event) => {
-  // let whichDba = process.env.API_KEY
+  goodOriginsArray = [
+    'flytechfree.com',
+    'bulmabarebones.netlify.app'
+  ]
+  let originn =  event.headers.origin.toLowerCase()
+  let originnMatch = ''
+  // const partialMatches = array.filter(item => item.includes("an")); // returns ["banana"]
+  originnMatch = goodOriginsArray.filter(item => item.includes(originn))  
+  if (originnMatch.length > 0){
+    console.log('origin matched.'+ originn)
+  }
+
   let whichDb = process.env.whichDb
   console.log('4 process.env.whichDb:')
   console.log(whichDb)
-  let evrc =  event.headers.origin
-  console.log(evrc)
-  let mossy = process.env.MOSS_MASTER
 
+  let mossy = process.env.MOSS_MASTER
   console.log('mossy:')
   console.log(mossy)
-  console.log('reached line 6 of getEnvVars.js lambda')
+  console.log('reached line 22 of getEnvVars.js lambda')
   let response = {
       statusCode: 200,
       headers: {'Access-Control-Allow-Origin': '*'},
