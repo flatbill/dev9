@@ -12,8 +12,8 @@ exports.handler = async (event) => {
   let whichDb = process.env.whichDb
   console.log('4 process.env.whichDb:')
   console.log(whichDb)
-  let originn = event.get('origin')
-  console.log(originn)
+  let evrc =  event.requestContext
+  console.log(evrc)
   let mossy = process.env.MOSS_MASTER
 
   console.log('mossy:')
