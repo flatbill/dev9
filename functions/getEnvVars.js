@@ -7,7 +7,8 @@ exports.handler = async (event) => {
   let originn =  event.headers.origin
   let originnMatch = ''
   // const partialMatches = array.filter(item => item.includes("an")); // returns ["banana"]
-  originnMatch = goodOriginsArray.filter(item => item.includes(originn))  
+  // originnMatch = goodOriginsArray.filter(item => item.includes(originn))  
+  originnMatch = goodOriginsArray.filter(item => item.includes('bulmabarebones'))  
   if (originnMatch.length > 0){
     console.log('origin matched.'+ originn)
   }
